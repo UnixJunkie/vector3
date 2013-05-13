@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: 5a21b96cb6609c77a0fa1e8f8791ca5d)
+version = "0.1"
+description =
+"module for 3D vectors (implemented as records of x, y and z floats)"
+archive(byte) = "vector3.cma"
+archive(byte, plugin) = "vector3.cma"
+archive(native) = "vector3.cmxa"
+archive(native, plugin) = "vector3.cmxs"
+exists_if = "vector3.cmxa"
+# OASIS_STOP
+
