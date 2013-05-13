@@ -1,0 +1,13 @@
+OASISFormat: 0.3
+Name: vector3
+Version: 0.1
+Synopsis: module for 3D vectors (implemented as records of x, y and z floats)
+Authors: Francois Berenger
+License: BSD3
+Plugins: META (0.3)
+
+Library vector3
+  Path: .
+  BuildTools: ocamlbuild
+  CompiledObject: native
+  Modules: Vector3
