@@ -62,6 +62,10 @@ let to_string v =
 
 (* operations -------------------------------------------------------------- *)
 
+(*$T dot
+  let unit_cube = make 1. 1. 1. in \
+  dot unit_cube unit_cube = 3.
+*)
 let dot v1 v2 =
   v1.x *. v2.x +.
   v1.y *. v2.y +.
@@ -78,39 +82,80 @@ let cross v1 v2 =
     y = v1.z *. v2.x -. v1.x *. v2.z;
     z = v1.x *. v2.y -. v1.y *. v2.x }
 
-let angle v1 v2 =
-  acos (dot v1 v2)
-
+(*$T diff
+  let unit_cube = make 1. 1. 1. in \
+  diff unit_cube unit_cube = origin
+*)
 let diff v1 v2 =
   { x = v1.x -. v2.x;
     y = v1.y -. v2.y;
     z = v1.z -. v2.z }
 
+(*$T add
+  let ox, oy, oz = (make 1. 0. 0.,    \
+                    make 0. 1. 0.,    \
+                    make 0. 0. 1.) in \
+  let unit_cube = make 1. 1. 1. in    \
+  add ox (add oy oz) = unit_cube
+*)
 let add v1 v2 =
   { x = v1.x +. v2.x;
     y = v1.y +. v2.y;
     z = v1.z +. v2.z }
 
+(*$T mag2
+  let unit_cube = make 1. 1. 1. in \
+  mag2 unit_cube = 3.
+*)
 let mag2 v =
   v.x *. v.x +.
   v.y *. v.y +.
   v.z *. v.z
 
+(*$T mag
+  let unit_cube = make 1. 1. 1. in \
+  mag unit_cube = sqrt 3.
+*)
 let mag v =
   sqrt (mag2 v)
 
+(*$T angle
+  let ox = make 1. 0. 0. in          \
+  let unit_square = make 1. 1. 0. in \
+  cmp_float ~epsilon:0.000001 (atan 1.) (angle ox unit_square)
+*)
+let angle v1 v2 =
+  acos ((dot v1 v2) /.
+        ((mag v1) *. (mag v2)))
+
+(*$T dist
+   let unit_cube = make 1. 1. 1. in \
+   dist unit_cube origin = sqrt 3.
+*)
 let dist v1 v2 =
   mag (diff v1 v2)
 
+(*$T div
+  let unit_cube = make 1. 1. 1. in \
+  div unit_cube 2. = make 0.5 0.5 0.5
+*)
 let div v s =
   { x = v.x /. s ;
     y = v.y /. s ;
     z = v.z /. s }
 
+(*$T mult
+   let unit_cube = make 1. 1. 1. in \
+   mult unit_cube 2. = make 2. 2. 2.
+*)
 let mult v s =
   { x = v.x *. s ;
     y = v.y *. s ;
     z = v.z *. s }
 
+(*$T normalize
+   let unit_cube = make 1. 1. 1. in \
+   cmp_float ~epsilon:0.000001 (mag (normalize unit_cube)) 1.
+*)
 let normalize v =
   div v (mag v)
