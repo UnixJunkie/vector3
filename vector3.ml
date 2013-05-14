@@ -68,8 +68,10 @@ let dot v1 v2 =
   v1.z *. v2.z
 
 (*$T cross
-  cross { x= 1. ; y = 0. ; z = 0. } { x= 0. ; y = 1. ; z = 0. } = \
-  { x= 0. ; y = 0. ; z = 1. }
+  let ox, oy, oz = (make 1. 0. 0.,    \
+                    make 0. 1. 0.,    \
+                    make 0. 0. 1.) in \
+  cross ox oy = oz
 *)
 let cross v1 v2 =
   { x = v1.y *. v2.z -. v1.z *. v2.y;
