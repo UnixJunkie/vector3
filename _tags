@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 454ce6b7e3e6e39f692400cd3c68ea5f)
+# DO NOT EDIT (digest: aade3f06ee78226d1f2200db507a8c95)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -16,8 +16,8 @@
 # Library vector3
 "vector3.cmxs": use_vector3
 # Executable test
-"test.native": pkg_oUnit
-"test.native": pkg_QTest2Lib
+<test.{native,byte}>: pkg_oUnit
+<test.{native,byte}>: pkg_QTest2Lib
 <*.ml{,i}>: pkg_oUnit
 <*.ml{,i}>: pkg_QTest2Lib
 # OASIS_STOP
