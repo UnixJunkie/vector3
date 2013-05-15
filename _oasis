@@ -21,8 +21,7 @@ Executable test
   BuildDepends: oUnit, QTest2Lib
   BuildTools: ocamlbuild
 
-# Test unit
-#   WorkingDirectory: .
-#   TestTools: qtest
-#   PreCommand: qtest -o test.ml extract vector3.ml
-#   Command: ocaml test.ml
+Test unit
+  WorkingDirectory: .
+  TestTools: qtest
+  Command: ./test.native
