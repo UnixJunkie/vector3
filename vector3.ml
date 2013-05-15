@@ -64,6 +64,7 @@ let to_string v =
 
 (* tests' variables *)
 (*$inject
+  let tiny = 0.000001 ;;
   let unit_square = make 1. 1. 0. ;;
   let unit_cube = make 1. 1. 1. ;;
   let ox, oy, oz = (make 1. 0. 0.,
@@ -118,7 +119,7 @@ let mag v =
   sqrt (mag2 v)
 
 (*$T angle
-  cmp_float ~epsilon:0.000001 (atan 1.) (angle ox unit_square)
+  cmp_float ~epsilon:tiny (atan 1.) (angle ox unit_square)
 *)
 let angle v1 v2 =
   acos ((dot v1 v2) /.
@@ -147,7 +148,7 @@ let mult v s =
     z = v.z *. s }
 
 (*$T normalize
-   cmp_float ~epsilon:0.000001 (mag (normalize unit_cube)) 1.
+   cmp_float ~epsilon:tiny (mag (normalize unit_cube)) 1.
 *)
 let normalize v =
   div v (mag v)
