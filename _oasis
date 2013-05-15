@@ -16,6 +16,7 @@ Library vector3
 
 Executable test
   Path: .
+  Install: false
   MainIs: test.ml
   CompiledObject: best
   BuildDepends: oUnit, QTest2Lib
