@@ -8,20 +8,19 @@ Plugins: META (0.3)
 
 PreBuildCommand: qtest -o test.ml extract vector3.ml
 
+BuildTools: ocamlbuild
+
 Library vector3
   Path: .
-  BuildTools: ocamlbuild
-  CompiledObject: native
   Modules: Vector3
 
 Executable test
   Path: .
   MainIs: test.ml
-  CompiledObject: native
+  CompiledObject: best
   BuildDepends: oUnit, QTest2Lib
-  BuildTools: ocamlbuild
 
 Test unit
   WorkingDirectory: .
-  TestTools: qtest
-  Command: ./test.native
+  TestTools: test
+  Command: $test
