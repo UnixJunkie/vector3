@@ -5,4 +5,4 @@
 oasis setup
 ocaml setup.ml -configure --enable-tests --prefix `opam config var prefix`
 ocaml setup.ml -build
-ocaml setup.ml -install
+./test.native && ocaml setup.ml -install
