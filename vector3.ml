@@ -52,6 +52,11 @@ let of_string str =
                     y = y ;
                     z = z })
 
+let of_string str =
+  try of_string str
+  with Scanf.Scan_failure msg ->
+    invalid_arg ("Vector3.of_string: " ^ msg)
+
 (* to other types ---------------------------------------------------------- *)
 
 let to_triplet v =
