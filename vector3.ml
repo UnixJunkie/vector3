@@ -47,10 +47,11 @@ let of_triplet (x, y, z) =
     z = z }
 
 let of_string str =
-  Scanf.sscanf str "%f %f %f"
-    (fun x y z -> { x = x ;
-                    y = y ;
-                    z = z })
+  try Scanf.sscanf str "%f %f %f"
+        (fun x y z -> { x = x ;
+                        y = y ;
+                        z = z })
+  with _ -> invalid_arg ("Vector3.of_string: " ^ str)
 
 (* to other types ---------------------------------------------------------- *)
 
