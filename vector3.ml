@@ -34,17 +34,17 @@ type t = { x : float ;
 let origin =
   { x = 0. ;
     y = 0. ;
-    z = 0. ; }
+    z = 0. }
 
 let make x y z =
   { x = x ;
     y = y ;
-    z = z ; }
+    z = z }
 
 let of_triplet (x, y, z) =
   { x = x ;
     y = y ;
-    z = z ; }
+    z = z }
 
 let of_string str =
   Scanf.sscanf str "%f %f %f"
@@ -84,24 +84,24 @@ let dot v1 v2 =
   cross ox oy = oz
 *)
 let cross v1 v2 =
-  { x = v1.y *. v2.z -. v1.z *. v2.y;
-    y = v1.z *. v2.x -. v1.x *. v2.z;
+  { x = v1.y *. v2.z -. v1.z *. v2.y ;
+    y = v1.z *. v2.x -. v1.x *. v2.z ;
     z = v1.x *. v2.y -. v1.y *. v2.x }
 
 (*$T diff
   diff unit_cube unit_cube = origin
 *)
 let diff v1 v2 =
-  { x = v1.x -. v2.x;
-    y = v1.y -. v2.y;
+  { x = v1.x -. v2.x ;
+    y = v1.y -. v2.y ;
     z = v1.z -. v2.z }
 
 (*$T add
   add ox (add oy oz) = unit_cube
 *)
 let add v1 v2 =
-  { x = v1.x +. v2.x;
-    y = v1.y +. v2.y;
+  { x = v1.x +. v2.x ;
+    y = v1.y +. v2.y ;
     z = v1.z +. v2.z }
 
 (*$T mag2
