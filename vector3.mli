@@ -2,7 +2,7 @@
 
 type t = { x : float; y : float; z : float; }
 
-(** {4 constructors} *)
+(** {4 Constructors} *)
 
 val origin : t
 
@@ -11,12 +11,12 @@ val make : float -> float -> float -> t
 val of_triplet : float * float * float -> t
 val of_string : string -> t
 
-(** {4 to other types} *)
+(** {4 Export to other types} *)
 
 val to_triplet : t -> float * float * float
 val to_string : t -> string
 
-(** {4 operations} *)
+(** {4 Operations} *)
 
 val dot : t -> t -> float
 val cross : t -> t -> t
