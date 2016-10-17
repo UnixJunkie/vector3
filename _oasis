@@ -1,4 +1,4 @@
-OASISFormat: 0.3
+OASISFormat: 0.4
 Name: vector3
 Version: 0.1
 Synopsis: module for 3D vectors (implemented as records of x, y and z floats)
@@ -6,7 +6,8 @@ Authors: Francois Berenger
 License: BSD3
 Plugins: META (0.3)
 
-PreBuildCommand: qtest -o test.ml extract vector3.ml
+if flag(tests)
+  PreBuildCommand: qtest -o test.ml extract vector3.ml
 
 BuildTools: ocamlbuild
 
@@ -17,9 +18,10 @@ Library vector3
 Executable test
   Path: .
   Install: false
+  Build$: flag(tests)
   MainIs: test.ml
   CompiledObject: best
-  BuildDepends: oUnit, QTest2Lib
+  BuildDepends: oUnit, QTest2Lib, vector3
 
 Test unit
   WorkingDirectory: .
