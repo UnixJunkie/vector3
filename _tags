@@ -1,8 +1,9 @@
 # OASIS_START
-# DO NOT EDIT (digest: aade3f06ee78226d1f2200db507a8c95)
-# Ignore VCS directories, you can use the same kind of rule outside 
-# OASIS_START/STOP if you want to exclude directories that contains 
+# DO NOT EDIT (digest: 8f8b2f1bb9119a6fa51d62f39e9b4479)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
+true: annot, bin_annot
 <**/.svn>: -traverse
 <**/.svn>: not_hygienic
 ".bzr": -traverse
@@ -15,9 +16,4 @@
 "_darcs": not_hygienic
 # Library vector3
 "vector3.cmxs": use_vector3
-# Executable test
-<test.{native,byte}>: pkg_oUnit
-<test.{native,byte}>: pkg_QTest2Lib
-<*.ml{,i}>: pkg_oUnit
-<*.ml{,i}>: pkg_QTest2Lib
 # OASIS_STOP
