@@ -153,3 +153,11 @@ let mult v s =
 *)
 let normalize v =
   div v (mag v)
+
+(*$T div
+  neg unit_cube = make (-1.) (-1.) (-1.)
+*)
+let neg v =
+  { x = -.v.x ;
+    y = -.v.y ;
+    z = -.v.z }

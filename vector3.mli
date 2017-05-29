@@ -29,3 +29,4 @@ val dist : t -> t -> float
 val div : t -> float -> t
 val mult : t -> float -> t
 val normalize : t -> t
+val neg : t -> t
