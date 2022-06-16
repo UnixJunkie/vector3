@@ -4,7 +4,7 @@ build:
 	dune build @install
 
 clean:
-	rm -rf _build
+	rm -rf _build qtest.targets.log test.ml test.native
 
 edit:
 	emacs src/*.ml TODO commands.sh &
