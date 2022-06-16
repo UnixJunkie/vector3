@@ -1,6 +1,6 @@
-(* Copyright (c) 2013, Zhang Initiative Research Unit,
- * Advance Science Institute, RIKEN
- * 2-1 Hirosawa, Wako, Saitama 351-0198, Japan
+(* Copyright (c) 2022, Francois Berenger
+ * Tsuda laboratory, Graduate School of Frontier Sciences,
+ * The University of Tokyo, Japan.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
