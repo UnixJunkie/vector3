@@ -1,0 +1,5 @@
+
+(library
+  (name vector3)
+  (public_name vector3)
+  (modules vector3))
